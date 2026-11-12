@@ -4,7 +4,7 @@
 <meta name="description" content="Shayan AI by Shayan Ramezani — a bilingual AI assistant. Connect an API or run it on your device. Download for Android, Windows and the web.">
 <meta name="theme-color" content="#0B0E14">
 <link rel="icon" href="assets/icon-192.png"><link rel="apple-touch-icon" href="assets/icon-192.png">
-<meta property="og:title" content="Shayan AI"><meta property="og:image" content="assets/icon-512.png">
+<link rel="canonical" href="https://shrbr.github.io/Shayanaisite/"><meta property="og:url" content="https://shrbr.github.io/Shayanaisite/"><meta property="og:type" content="website"><meta property="og:title" content="Shayan AI"><meta property="og:description" content="Connect an API or run it on your device. English + Persian. Android, Windows and Web."><meta property="og:image" content="https://shrbr.github.io/Shayanaisite/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://shrbr.github.io/Shayanaisite/assets/og.png">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Vazirmatn:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0B0E14;--tx:#EDEFF5;--dim:#9aa3b5;--v:#7C5CFF;--c:#22D3EE;--ln:rgba(255,255,255,.1);--en:'Unbounded','Segoe UI',system-ui,sans-serif;--fa:'Vazirmatn','Tahoma',sans-serif;--body:'Inter','Vazirmatn',system-ui,sans-serif;color-scheme:dark}
@@ -15,7 +15,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-grad
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-nav{position:fixed;top:0;inset-inline:0;z-index:20;padding:calc(env(safe-area-inset-top,0px) + 12px) 0 12px;backdrop-filter:blur(14px);background:rgba(11,14,20,.55);border-bottom:1px solid var(--ln)}
+nav{position:fixed;top:0;inset-inline:0;z-index:30;padding:calc(env(safe-area-inset-top,0px) + 12px) 0 12px;backdrop-filter:blur(14px);background:rgba(11,14,20,.55);border-bottom:1px solid var(--ln)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--en);font-weight:800;font-size:15px;letter-spacing:-.02em}
 .brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 0 18px rgba(124,92,255,.6)}
@@ -139,10 +139,38 @@ h2{position:relative;padding-bottom:16px}h2::after{content:"";position:absolute;
 @keyframes fpop{from{opacity:0;transform:scale(.8) translateY(26px) rotate(-2deg)}to{opacity:1;transform:none}}
 .tag{display:inline-block;font:600 11px var(--en);letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
 .fcard h3{font-size:1.05rem}
+
+.bgr{width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:rgba(255,255,255,.06);display:grid;place-content:center;gap:5px;cursor:pointer;flex:none}
+.bgr i{display:block;width:18px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+.bgr.x i:nth-child(1){transform:translateY(7px) rotate(45deg)}.bgr.x i:nth-child(2){opacity:0}.bgr.x i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#mn{position:fixed;inset:0;z-index:25;background:rgba(8,10,16,.95);backdrop-filter:blur(18px);display:flex;align-items:flex-start;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 84px) 0 40px}
+#mn.open{opacity:1;visibility:visible}#mn .mi{counter-reset:m;width:min(720px,100% - 40px);margin-inline:auto}
+#mn a{display:flex;align-items:baseline;gap:16px;font:800 clamp(1.4rem,6vw,2.3rem)/1.3 var(--en);padding:11px 0;border-bottom:1px solid var(--ln);opacity:0;transform:translateY(28px);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1),color .2s,padding .25s}
+html[lang=fa] #mn a{font-family:var(--fa)}
+#mn.open a{opacity:1;transform:none;transition-delay:calc(var(--n)*55ms + 120ms),calc(var(--n)*55ms + 120ms),0s,0s}
+#mn a::before{counter-increment:m;content:counter(m,decimal-leading-zero);font:500 .8rem var(--en);color:var(--c)}
+#mn a:hover{color:var(--c);padding-inline-start:14px}
+@media(max-width:520px){nav .nr .btn.sm{display:none}}
+.track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px max(20px,calc(50% - 560px)) 30px;scrollbar-width:none;direction:ltr;-webkit-overflow-scrolling:touch}.track::-webkit-scrollbar{display:none}
+.ph{flex:none;width:min(250px,68vw);scroll-snap-align:center;margin:0;text-align:center}.ph:nth-child(even) .phf{margin-top:26px}
+.phf{border-radius:34px;padding:9px;background:linear-gradient(160deg,#2a3150,#0e1220);border:1px solid var(--ln);box-shadow:0 24px 70px rgba(124,92,255,.28);transition:transform .4s;cursor:zoom-in}.phf:hover{transform:translateY(-8px) rotate(-1deg)}
+.phf img{width:100%;display:block;border-radius:26px;aspect-ratio:600/1040;object-fit:cover}
+.ph figcaption{margin-top:16px;color:var(--dim);font-size:.95rem;direction:rtl}html[lang=en] .ph figcaption{direction:ltr}
+.dotsb{display:flex;justify-content:center;gap:8px}.dotsb i{width:8px;height:8px;border-radius:99px;background:var(--ln);transition:.3s}.dotsb i.on{width:26px;background:linear-gradient(90deg,var(--v),var(--c))}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(5,7,11,.92);backdrop-filter:blur(10px);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.35s;cursor:zoom-out}.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-height:90vh;max-width:92vw;border-radius:22px;transform:scale(.88);transition:.45s cubic-bezier(.2,.8,.2,1)}.lb.on img{transform:none}
+.cmp{display:grid;gap:10px;max-width:920px}.cr{display:grid;grid-template-columns:.9fr 1.4fr 1.4fr;gap:10px}
+.cr>*{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--ln);font-size:.92rem;color:var(--dim)}.cr b{color:var(--tx)}
+.cr .win{color:var(--tx);border-color:rgba(34,211,238,.55);background:linear-gradient(120deg,rgba(124,92,255,.2),rgba(34,211,238,.1))}.cr .win::before{content:"✓ ";color:var(--c);font-weight:800}
+.cr.h>*{background:none;border:0;font:800 1rem var(--en);color:var(--tx);text-align:center}
+@media(max-width:560px){.cr{grid-template-columns:.8fr 1.3fr 1.3fr;gap:6px}.cr>*{padding:10px;font-size:.78rem}}
+.cts{display:flex;flex-wrap:wrap;gap:14px}.cts a{display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid var(--ln);font-weight:600;transition:.3s}.cts a:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 10px 30px rgba(34,211,238,.18)}.cts span.e{font-size:22px}
+footer a{color:var(--tx);text-decoration:underline;text-underline-offset:3px}
 </style></head><body>
 <div id="ld"><img src="assets/icon-192.png" alt=""></div><div class="prog" id="prog"></div><div class="blob b1"></div><div class="blob b2"></div><canvas id="bg"></canvas>
 <nav><div class="wrap"><a class="brand" href="#top"><img src="assets/icon-192.png" alt="">Shayan AI</a>
-<div class="links"><a href="#film"><span class="en">Video</span><span class="fa">ویدیو</span></a><a href="#features"><span class="en">Features</span><span class="fa">قابلیت‌ها</span></a><a href="#download"><span class="en">Download</span><span class="fa">دانلود</span></a><a href="#news"><span class="en">News</span><span class="fa">اخبار</span></a><a href="#faq"><span class="en">FAQ</span><span class="fa">سؤالات</span></a></div><div class="nr"><button class="lang" id="lg" type="button"><span class="en">فارسی</span><span class="fa">English</span></button><a class="btn pri sm" href="#download"><span class="en">Download</span><span class="fa">دانلود</span></a></div></div></nav>
+<div class="links"><a href="#film"><span class="en">Video</span><span class="fa">ویدیو</span></a><a href="#features"><span class="en">Features</span><span class="fa">قابلیت‌ها</span></a><a href="#download"><span class="en">Download</span><span class="fa">دانلود</span></a><a href="#news"><span class="en">News</span><span class="fa">اخبار</span></a><a href="#faq"><span class="en">FAQ</span><span class="fa">سؤالات</span></a></div><div class="nr"><button class="lang" id="lg" type="button"><span class="en">فارسی</span><span class="fa">English</span></button><a class="btn pri sm" href="#download"><span class="en">Download</span><span class="fa">دانلود</span></a><button class="bgr" id="bgr" type="button" aria-label="Menu"><i></i><i></i><i></i></button></div></div></nav>
+<div id="mn"><div class="mi"><a href="#top"><span class="en">Home</span><span class="fa">خانه</span></a><a href="#film"><span class="en">Intro video</span><span class="fa">ویدیوی معرفی</span></a><a href="#shots"><span class="en">Screenshots</span><span class="fa">اسکرین‌شات‌ها</span></a><a href="#features"><span class="en">Features</span><span class="fa">قابلیت‌ها</span></a><a href="#compare"><span class="en">API vs local</span><span class="fa">API یا محلی</span></a><a href="#download"><span class="en">Download</span><span class="fa">دانلود</span></a><a href="#install"><span class="en">How to install</span><span class="fa">آموزش نصب</span></a><a href="#news"><span class="en">News</span><span class="fa">اخبار</span></a><a href="#privacy"><span class="en">Privacy</span><span class="fa">حریم خصوصی</span></a><a href="#faq"><span class="en">FAQ</span><span class="fa">سؤالات متداول</span></a></div></div>
 
 <header class="hero" id="top"><div class="ow"><canvas id="orb"></canvas><div class="ring"><i style="--r:0deg"><span>OpenAI</span></i><i style="--r:72deg"><span>Anthropic</span></i><i style="--r:144deg"><span>WebGPU</span></i><i style="--r:216deg"><span>Groq</span></i><i style="--r:288deg"><span>OpenRouter</span></i></div></div>
 <div class="wrap"><h1 id="h1">SHAYAN AI</h1><p class="by"><span class="en">Created by</span><span class="fa">ساخته‌شده توسط</span> <b>Shayan Ramezani</b></p>
@@ -171,9 +199,21 @@ h2{position:relative;padding-bottom:16px}h2::after{content:"";position:absolute;
 <section id="film"><div class="wrap split">
 <div class="vw rv"><div class="vf"><video id="fv" playsinline preload="metadata" poster="assets/poster.jpg"><source src="assets/intro.mp4" type="video/mp4"></video><div class="pl" id="fpl"><b>▶</b></div></div></div>
 <div><h2 class="rv"><span class="en">Watch the <span class="g">intro.</span></span><span class="fa">ویدیوی <span class="g">معرفی</span> را ببین.</span></h2><p class="sub rv"><span class="en">A short tour of Shayan AI — in English and Persian.</span><span class="fa">یک تور کوتاه از Shayan AI، به انگلیسی و فارسی.</span></p><a class="btn pri rv" href="#download"><span class="en">Get the app</span><span class="fa">دریافت برنامه</span></a></div></div></section>
+<section id="shots" style="padding-inline:0"><div class="wrap">
+<h2 class="rv"><span class="en">Inside the <span class="g">app.</span></span><span class="fa">داخل <span class="g">برنامه.</span></span></h2><p class="sub rv"><span class="en">Real screenshots from Shayan AI. Tap one to enlarge.</span><span class="fa">اسکرین‌شات‌های واقعی از Shayan AI. برای بزرگ‌نمایی روی هر کدام بزن.</span></p></div>
+<div class="track" id="trk"><figure class="ph rv"><div class="phf"><img src="assets/shot-2.jpg" alt="" loading="lazy"></div><figcaption><span class="en">Dark theme</span><span class="fa">تم تیره</span></figcaption></figure><figure class="ph rv"><div class="phf"><img src="assets/shot-1.jpg" alt="" loading="lazy"></div><figcaption><span class="en">Light theme</span><span class="fa">تم روشن</span></figcaption></figure><figure class="ph rv"><div class="phf"><img src="assets/shot-4.jpg" alt="" loading="lazy"></div><figcaption><span class="en">Conversations & search</span><span class="fa">گفتگوها و جستجو</span></figcaption></figure><figure class="ph rv"><div class="phf"><img src="assets/shot-3.jpg" alt="" loading="lazy"></div><figcaption><span class="en">Settings</span><span class="fa">تنظیمات</span></figcaption></figure></div><div class="dotsb" id="dts"></div></section>
 <section id="features"><div class="wrap">
 <h2 class="rv"><span class="en">Every <span class="g">feature.</span></span><span class="fa">همه‌ی <span class="g">قابلیت‌ها.</span></span></h2><p class="sub rv"><span class="en">Everything Shayan AI can do, in one place. Filter by category.</span><span class="fa">هر کاری که Shayan AI می‌تواند انجام بدهد، یک‌جا. بر اساس دسته فیلتر کن.</span></p>
 <div class="chips2" id="fchips"></div><div class="grid g4" id="fgrid"></div></div></section>
+<section id="compare"><div class="wrap">
+<h2 class="rv"><span class="en">API <span class="g">vs</span> local.</span><span class="fa">API <span class="g">یا</span> محلی.</span></h2><p class="sub rv"><span class="en">Both modes live in the same app. Here is how they differ.</span><span class="fa">هر دو حالت در یک برنامه‌اند. تفاوتشان این است.</span></p>
+<div class="cmp rv"><div class="cr h"><b></b><span>API</span><span><span class="en">Local</span><span class="fa">محلی</span></span></div>
+<div class="cr"><b><span class="en">Model power</span><span class="fa">قدرت مدل</span></b><span class="win"><span class="en">Larger, more capable models</span><span class="fa">مدل‌های بزرگ‌تر و توانمندتر</span></span><span><span class="en">Smaller models that fit your device</span><span class="fa">مدل‌های کوچک‌تر که روی دستگاهت جا شوند</span></span></div>
+<div class="cr"><b><span class="en">Getting started</span><span class="fa">شروع</span></b><span class="win"><span class="en">Connect and chat right away</span><span class="fa">وصل شو و همان لحظه گفتگو کن</span></span><span><span class="en">Download a model first</span><span class="fa">اول باید مدل را دانلود کنی</span></span></div>
+<div class="cr"><b><span class="en">Device</span><span class="fa">دستگاه</span></b><span class="win"><span class="en">Any modern browser</span><span class="fa">هر مرورگر امروزی</span></span><span><span class="en">A device with WebGPU</span><span class="fa">دستگاهی با WebGPU</span></span></div>
+<div class="cr"><b><span class="en">Your messages</span><span class="fa">پیام‌های تو</span></b><span><span class="en">Sent to your API provider</span><span class="fa">به سرویس API تو فرستاده می‌شود</span></span><span class="win"><span class="en">Stay on your device</span><span class="fa">روی دستگاهت می‌ماند</span></span></div>
+<div class="cr"><b><span class="en">Cost</span><span class="fa">هزینه</span></b><span><span class="en">Depends on your provider; some offer free keys</span><span class="fa">به سرویس‌دهنده بستگی دارد؛ بعضی کلید رایگان دارند</span></span><span class="win"><span class="en">No API cost</span><span class="fa">بدون هزینه‌ی API</span></span></div></div>
+</div></section>
 <section id="how"><div class="wrap">
 <h2 class="rv"><span class="en">How it <span class="g">works.</span></span><span class="fa"><span class="g">چطور</span> کار می‌کند.</span></h2><p class="sub rv"><span class="en">Three steps from install to your first answer.</span><span class="fa">سه قدم از نصب تا اولین جواب.</span></p>
 <div class="grid g3"><div class="card rv"><span class="num">01</span><h3><span class="en">Choose your mode</span><span class="fa">حالت را انتخاب کن</span></h3><p><span class="en">Connect an API for maximum power, or run on your device.</span><span class="fa">برای قدرت بیشتر به API وصل شو، یا روی دستگاه خودت اجرا کن.</span></p></div>
@@ -217,6 +257,14 @@ h2{position:relative;padding-bottom:16px}h2::after{content:"";position:absolute;
 <section id="news"><div class="wrap">
 <h2 class="rv"><span class="en">News & <span class="g">updates.</span></span><span class="fa">اخبار و <span class="g">به‌روزرسانی‌ها.</span></span></h2><p class="sub rv"><span class="en">What’s new with Shayan AI.</span><span class="fa">تازه‌های Shayan AI.</span></p>
 <div class="tl rv" id="tl"></div></div></section>
+<section id="privacy"><div class="wrap">
+<h2 class="rv"><span class="en">Your data, <span class="g">your device.</span></span><span class="fa">داده‌ی تو، <span class="g">دستگاه تو.</span></span></h2><p class="sub rv"><span class="en">Privacy at a glance.</span><span class="fa">حریم خصوصی در یک نگاه.</span></p>
+<div class="grid g4"><div class="card rv"><span class="ic">💾</span><h3><span class="en">Stored on your device</span><span class="fa">ذخیره روی دستگاه تو</span></h3><p><span class="en">Chats and settings stay in your browser’s storage.</span><span class="fa">گفتگوها و تنظیمات در حافظه‌ی مرورگر تو می‌مانند.</span></p></div>
+<div class="card rv"><span class="ic">🚪</span><h3><span class="en">Only what you enable leaves</span><span class="fa">فقط آنچه فعال کنی بیرون می‌رود</span></h3><p><span class="en">API, web search, link reading and image generation contact the services you choose.</span><span class="fa">API، جستجوی وب، خواندن لینک و ساخت تصویر با سرویس‌هایی که انتخاب می‌کنی ارتباط می‌گیرند.</span></p></div>
+<div class="card rv"><span class="ic">🚫</span><h3><span class="en">No built-in trackers</span><span class="fa">بدون ردیاب داخلی</span></h3><p><span class="en">The app has no analytics or advertising trackers.</span><span class="fa">برنامه ابزار تحلیل یا ردیاب تبلیغاتی ندارد.</span></p></div>
+<div class="card rv"><span class="ic">🧹</span><h3><span class="en">You are in control</span><span class="fa">کنترل با توست</span></h3><p><span class="en">Clear history or all data, and lock the app with a passcode.</span><span class="fa">تاریخچه یا همه‌ی داده‌ها را پاک کن و برنامه را با رمز قفل کن.</span></p></div></div>
+<p style="margin-top:28px"><a class="btn rv" href="privacy.html"><span class="en">Read the full privacy policy</span><span class="fa">خواندن متن کامل حریم خصوصی</span></a></p>
+</div></section>
 <section id="about"><div class="wrap"><div class="card about rv"><img class="av" src="assets/icon-192.png" alt=""><div><p class="by" style="margin:0 0 6px"><span class="en">Creator</span><span class="fa">سازنده</span></p><div class="nm">Shayan Ramezani</div><p style="color:var(--dim);margin-top:10px;max-width:520px"><span class="en">Shayan AI is designed and built by Shayan Ramezani.</span><span class="fa">Shayan AI توسط Shayan Ramezani طراحی و ساخته شده است.</span></p></div></div></div></section>
 <section id="faq"><div class="wrap">
 <h2 class="rv"><span class="en">Questions, <span class="g">answered.</span></span><span class="fa">سؤالات <span class="g">متداول.</span></span></h2><div style="height:20px"></div>
@@ -228,7 +276,7 @@ h2{position:relative;padding-bottom:16px}h2::after{content:"";position:absolute;
 <details class="rv"><summary><span class="en">Who made Shayan AI?</span><span class="fa">Shayan AI را چه کسی ساخته؟</span></summary><p>Shayan Ramezani.</p></details>
 </div></section>
 <a class="up" id="up" href="#top">↑</a>
-<footer><div class="wrap">© Shayan AI · Shayan Ramezani · <a href="https://shrbr.github.io/SHAYANAI" target="_blank" rel="noopener"><span class="en">Web app</span><span class="fa">نسخه وب</span></a></div></footer>
+<footer><div class="wrap">© Shayan AI · Shayan Ramezani · <a href="https://shrbr.github.io/SHAYANAI" target="_blank" rel="noopener"><span class="en">Web app</span><span class="fa">نسخه وب</span></a> · <a href="privacy.html"><span class="en">Privacy</span><span class="fa">حریم خصوصی</span></a></div></footer><div class="lb" id="lb"><img alt=""></div>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],R=document.documentElement;
@@ -326,6 +374,16 @@ $('#fc').dataset.n=FEAT.length;
 (function(){const l=$('#ld'),h=()=>{l.classList.add('x');setTimeout(()=>l.remove(),800)};const t0=performance.now();addEventListener('load',()=>setTimeout(h,Math.max(0,900-(performance.now()-t0))));setTimeout(h,2500)})();
 // shooting stars
 const SH=[];function shoot(){if(Math.random()<.006&&SH.length<3)SH.push({x:Math.random()*BW,y:Math.random()*BH*.5,l:0,vx:6+Math.random()*4,vy:3+Math.random()*2});for(const s of SH){s.x+=s.vx;s.y+=s.vy;s.l++;bx.strokeStyle=`rgba(150,220,255,${1-s.l/60})`;bx.lineWidth=1.5;bx.beginPath();bx.moveTo(s.x,s.y);bx.lineTo(s.x-s.vx*7,s.y-s.vy*7);bx.stroke()}for(let i=SH.length;i--;)if(SH[i].l>60)SH.splice(i,1)}
+
+// menu
+(function(){const b=$('#bgr'),m=$('#mn');$$('#mn a').forEach((a,i)=>a.style.setProperty('--n',i));
+ const set=o=>{m.classList.toggle('open',o);b.classList.toggle('x',o);document.body.style.overflow=o?'hidden':''};
+ b.onclick=()=>set(!m.classList.contains('open'));m.addEventListener('click',e=>{if(e.target.closest('a')||e.target===m)set(false)});addEventListener('keydown',e=>{if(e.key==='Escape')set(false)})})();
+// gallery
+(function(){const tr=$('#trk'),ps=$$('.ph'),d=$('#dts'),lb=$('#lb');d.innerHTML=ps.map(()=>'<i></i>').join('');const ds=[...d.children];
+ function up(){const c=tr.scrollLeft+tr.clientWidth/2;let k=0,best=1e9;ps.forEach((p,i)=>{const x=Math.abs(p.offsetLeft+p.offsetWidth/2-c);if(x<best){best=x;k=i}});ds.forEach((x,i)=>x.classList.toggle('on',i===k))}
+ tr.addEventListener('scroll',up,{passive:true});up();ds.forEach((x,i)=>x.onclick=()=>tr.scrollTo({left:ps[i].offsetLeft-(tr.clientWidth-ps[i].offsetWidth)/2,behavior:'smooth'}));
+ tr.addEventListener('click',e=>{const im=e.target.closest('.phf img');if(!im)return;lb.querySelector('img').src=im.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')})})();
 // counters
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const n=+e.target.dataset.n,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1400);e.target.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
 $$('[data-n]').forEach(e=>co.observe(e));
