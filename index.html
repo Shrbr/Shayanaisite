@@ -313,10 +313,10 @@ requestAnimationFrame(frame);
 
 /*NEWS: add items at the top of this list*/
 const NEWS=[
+{d:'2026-11-13',en:['The interface has changed','Shayan AI has a redesigned interface: glass panels, new chat bubbles, an animated logo and a starry sky background.'],fa:['رابط کاربری تغییر کرد','Shayan AI حالا رابط کاربری کاملاً جدیدی دارد: پنل‌های شیشه‌ای، حباب‌های تازه‌ی گفتگو، لوگوی متحرک و پس‌زمینه‌ی ستاره‌دار.']},
 {d:'2026-11-11',en:['Website launched','The Shayan AI website is live, with downloads and install guides for every platform.'],fa:['راه‌اندازی وب‌سایت','وب‌سایت Shayan AI با دانلود و آموزش نصب برای همه‌ی پلتفرم‌ها آماده شد.']},
 {d:'2026-11-11',en:['Windows app available','The Windows installer package is ready to download.'],fa:['نسخه‌ی ویندوز','بسته‌ی نصب ویندوز آماده‌ی دانلود است.']},
-{d:'2026-10-31',en:['Android app available','The Android APK is ready to download.'],fa:['نسخه‌ی اندروید','فایل APK اندروید آماده‌ی دانلود است.']},
-{d:'',en:['More coming soon','Stay tuned for new features and updates.'],fa:['به‌زودی موارد بیشتر','منتظر قابلیت‌ها و به‌روزرسانی‌های جدید باش.']}];
+{d:'2026-10-31',en:['Android app available','The Android APK is ready to download.'],fa:['نسخه‌ی اندروید','فایل APK اندروید آماده‌ی دانلود است.']}].sort((a,b)=>b.d.localeCompare(a.d));
 $('#tl').innerHTML=NEWS.map(n=>{const D=n.d?new Date(n.d+'T12:00:00'):null,de=D?D.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}):'',df=D?D.toLocaleDateString('fa-IR',{year:'numeric',month:'long',day:'numeric'}):'';
  return `<div class="ni">${D?`<time><span class="en">${de}</span><span class="fa">${df}</span></time>`:''}<h3><span class="en">${n.en[0]}</span><span class="fa">${n.fa[0]}</span></h3><p><span class="en">${n.en[1]}</span><span class="fa">${n.fa[1]}</span></p></div>`}).join('');
 // progress, back-to-top, hero parallax
